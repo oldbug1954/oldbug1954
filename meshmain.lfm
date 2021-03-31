@@ -1,0 +1,355 @@
+object Meshmainform: TMeshmainform
+  Left = 596
+  Height = 480
+  Top = 218
+  Width = 767
+  Align = alLeft
+  Caption = 'Meshmainform'
+  ClientHeight = 459
+  ClientWidth = 767
+  Menu = MainMenu1
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  LCLVersion = '1.6.2.0'
+  object OpenGLControl1: TOpenGLControl
+    Left = 8
+    Height = 279
+    Top = 24
+    Width = 752
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoResizeViewport = True
+    MultiSampling = 0
+    OnMouseDown = OpenGLControl1MouseDown
+    OnMouseMove = OpenGLControl1MouseMove
+    OnMouseUp = OpenGLControl1MouseUp
+    OnMouseWheel = OpenGLControl1MouseWheel
+    OnPaint = OpenGLControl1Paint
+    OnResize = OpenGLControl1Resize
+  end
+  object Memo1: TMemo
+    Left = 544
+    Height = 67
+    Top = 319
+    Width = 168
+    Anchors = [akLeft, akBottom]
+    Color = clNone
+    Font.Color = clNone
+    Lines.Strings = (
+      'Memo1'
+    )
+    ParentFont = False
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+  end
+  object RangeTrackBar: TTrackBar
+    Left = 496
+    Height = 88
+    Top = 334
+    Width = 28
+    Max = 100
+    OnChange = RangeTrackBarChange
+    Orientation = trVertical
+    Position = 0
+    Anchors = [akLeft, akBottom]
+    TabOrder = 2
+  end
+  object RYTrackBar: TTrackBar
+    Left = 248
+    Height = 52
+    Top = 357
+    Width = 220
+    Max = 360
+    OnChange = RyTrackBarChange
+    Position = 180
+    Anchors = [akLeft, akBottom]
+    TabOrder = 3
+  end
+  object RZTrackBar: TTrackBar
+    Left = 248
+    Height = 52
+    Top = 399
+    Width = 220
+    Max = 360
+    OnChange = RzTrackBarChange
+    Position = 180
+    Anchors = [akLeft, akBottom]
+    TabOrder = 4
+  end
+  object ShowdatabaseButton: TButton
+    Left = 29
+    Height = 25
+    Top = 394
+    Width = 75
+    Anchors = [akLeft, akBottom]
+    Caption = 'Database'
+    OnClick = ShowdatabaseButtonClick
+    TabOrder = 5
+  end
+  object SealevelButton: TButton
+    Left = 33
+    Height = 25
+    Top = 423
+    Width = 75
+    Anchors = [akLeft, akBottom]
+    Caption = 'Sea level'
+    OnClick = SealevelButtonClick
+    TabOrder = 6
+  end
+  object ToolBar2: TToolBar
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 767
+    Caption = 'ToolBar2'
+    TabOrder = 7
+    object IsoBitBtn: TBitBtn
+      Left = 1
+      Height = 22
+      Top = 2
+      Width = 75
+      Caption = 'Iso'
+      OnClick = IsoBitBtnClick
+      TabOrder = 0
+    end
+    object TailIsoBitBtn: TBitBtn
+      Left = 76
+      Height = 22
+      Top = 2
+      Width = 75
+      Caption = 'Tail Iso'
+      OnClick = TailIsoBitBtnClick
+      TabOrder = 1
+    end
+    object CacheOnBitBtn: TBitBtn
+      Left = 151
+      Height = 22
+      Top = 2
+      Width = 75
+      Caption = 'Cache On'
+      OnClick = CacheOnBitBtnClick
+      TabOrder = 2
+    end
+    object CacheoffBitBtn: TBitBtn
+      Left = 226
+      Height = 22
+      Top = 2
+      Width = 75
+      Caption = 'Cache Off'
+      OnClick = CacheoffBitBtnClick
+      TabOrder = 3
+    end
+  end
+  object RX1TrackBar: TTrackBar
+    Left = 576
+    Height = 52
+    Top = 391
+    Width = 100
+    Max = 360
+    OnChange = RX1TrackBarChange
+    Position = 0
+    Anchors = [akLeft, akBottom]
+    TabOrder = 8
+  end
+  object rxtrackbar: TTrackBar
+    Left = 260
+    Height = 52
+    Top = 316
+    Width = 208
+    Max = 360
+    OnChange = rxtrackbarChange
+    Position = 180
+    Anchors = [akLeft, akBottom]
+    TabOrder = 9
+  end
+  object MainMenu1: TMainMenu
+    left = 424
+    top = 16
+    object FileMenuItem: TMenuItem
+      Caption = 'File'
+      object Saveenvironment: TMenuItem
+        Caption = 'Save Environment'
+        OnClick = SaveenvironmentClick
+      end
+      object LoadMenuItem: TMenuItem
+        Caption = 'Load Testnodes'
+        OnClick = LoadMenuItemClick
+      end
+      object LoadAnyMenuItem: TMenuItem
+        Caption = 'Load'
+        OnClick = LoadAnyMenuItemClick
+      end
+      object SaveMenuItem: TMenuItem
+        Caption = 'Save Testnodes'
+        OnClick = SaveMenuItemClick
+      end
+      object SaveanyMenuItem: TMenuItem
+        Caption = 'Save'
+        OnClick = SaveanyMenuItemClick
+      end
+      object ClearSTLMenuItem: TMenuItem
+        Caption = 'ClearSTL'
+        OnClick = ClearSTLMenuItemClick
+      end
+      object ExportSTLMenuItem: TMenuItem
+        Caption = 'Export STL'
+        OnClick = ExportSTLMenuItemClick
+      end
+      object ExportpartialMenuItem: TMenuItem
+        Caption = 'Export partial STL'
+        OnClick = ExportpartialMenuItemClick
+      end
+    end
+    object AboveMenuItem: TMenuItem
+      Caption = 'View'
+      object TopViewMenuItem: TMenuItem
+        Caption = 'Top View'
+        OnClick = TopViewMenuItemClick
+      end
+      object SideViewMenuItem: TMenuItem
+        Caption = 'Side View'
+        OnClick = SideViewMenuItemClick
+      end
+      object FrontViewMenuItem: TMenuItem
+        Caption = 'Front View'
+        OnClick = FrontViewMenuItemClick
+      end
+      object MenuItem1: TMenuItem
+        Caption = 'Spline Form'
+        OnClick = MenuItem1Click
+      end
+      object MenuItem3: TMenuItem
+        Caption = 'Utils Form'
+        OnClick = MenuItem3Click
+      end
+    end
+    object WireFrameMenuItem: TMenuItem
+      Caption = 'Hull Drawing'
+      object SetwireframeMenuItem: TMenuItem
+        Caption = 'Wire Frame'
+        OnClick = SetwireframeMenuItemClick
+      end
+      object DrawplankMenuItem: TMenuItem
+        Caption = 'Plank'
+        Default = True
+        OnClick = DrawplankMenuItemClick
+      end
+      object DrawfullMenuItem: TMenuItem
+        Caption = 'Full '
+        OnClick = DrawfullMenuItemClick
+      end
+      object HidedrawingMenuItem: TMenuItem
+        Caption = 'Hide'
+        OnClick = HidedrawingMenuItemClick
+      end
+      object BothSidesMenuItem: TMenuItem
+        Caption = 'Both Sides'
+        OnClick = BothSidesMenuItemClick
+      end
+      object CreateKeelMenuItem: TMenuItem
+        Caption = 'Create Keel'
+        OnClick = CreateKeelMenuItemClick
+      end
+      object MenuItem4: TMenuItem
+        Caption = 'Create Inside'
+        OnClick = MenuItem4Click
+      end
+      object ShowInsideMenuItem1: TMenuItem
+        Caption = 'Show Inside'
+        OnClick = ShowInsideMenuItem1Click
+      end
+      object ShowOutsideMenuItem: TMenuItem
+        Caption = 'Show Outside'
+        OnClick = ShowOutsideMenuItemClick
+      end
+      object ShowInandOutMenuItem: TMenuItem
+        Caption = 'Show In and Out'
+        OnClick = ShowInandOutMenuItemClick
+      end
+      object CreateStlMenuItem: TMenuItem
+        Caption = 'Create STL (3,7,1,2)'
+        OnClick = CreateStlMenuItemClick
+      end
+      object MenuItem2: TMenuItem
+        Caption = 'STL (3,7,2,1)'
+        OnClick = MenuItem2Click
+      end
+    end
+    object InformationMenuItem: TMenuItem
+      Caption = 'Information'
+      OnClick = InformationMenuItemClick
+      object ColorMenuItem: TMenuItem
+        Caption = 'Color Picker'
+        OnClick = ColorMenuItemClick
+      end
+    end
+    object SetScaleMenuItem: TMenuItem
+      Caption = 'Set scale'
+      OnClick = SetScaleMenuItemClick
+    end
+    object Rockmenuitem: TMenuItem
+      Caption = 'Rock'
+      OnClick = RockmenuitemClick
+    end
+    object MenuItem5: TMenuItem
+      Caption = 'Workbench'
+      object MenuItem6: TMenuItem
+        Caption = 'Face 3D'
+        OnClick = Face3dWork
+      end
+      object MenuItem7: TMenuItem
+        Caption = '2D to 3D'
+        OnClick = MenuItem2to3dClick
+      end
+      object MenuItemPortholes: TMenuItem
+        Caption = 'Portholes'
+        OnClick = MenuItemPortholesClick
+      end
+    end
+    object createinsideMenuItem: TMenuItem
+      Caption = 'Create Inside'
+      OnClick = createinsideMenuItemClick
+    end
+  end
+  object ApplicationProperties1: TApplicationProperties
+    left = 768
+    top = 424
+  end
+  object SaveDialog1: TSaveDialog
+    Title = 'Save Drawing as'
+    DefaultExt = '.txt'
+    left = 148
+    top = 379
+  end
+  object OpenDialog1: TOpenDialog
+    left = 131
+    top = 323
+  end
+  object ColorDialog1: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    left = 520
+    top = 17
+  end
+end
